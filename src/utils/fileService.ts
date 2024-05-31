@@ -1,0 +1,21 @@
+import * as uuid from "uuid";
+import * as path from "path";
+
+class FilesService {
+	saveFile(file, dir, subDir, index) {
+		try {
+			const extension = path.extname(file.name);
+			const fileName = `${dir}_${subDir}_${index}` + `${extension}`;
+			const filePath = path.resolve(
+				`static/images/products/${dir}/${subDir}/`,
+				fileName
+			);
+			file.mv(filePath);
+			return fileName;
+		} catch (e) {
+			console.log(e);
+		}
+	}
+}
+
+export default new FilesService();
