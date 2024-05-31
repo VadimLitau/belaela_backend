@@ -14,7 +14,6 @@ import expres from "express";
 // const PORT = process.env.PORT;
 // const DB_URL = process.env.DB_URL;
 const app = expres();
-
 //нужно чтобы экспресс мог понимать json
 // app.use(cors());
 // app.use(expres.json());
