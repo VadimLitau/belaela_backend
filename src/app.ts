@@ -7,12 +7,12 @@ import fileUpload from "express-fileupload";
 import routes from "./routes";
 
 dotenv.config();
-// const PORT = 5000;
+const PORT = 5000;
 // const DB_URL = "mongodb://localhost:27017/Belaela";
 // const DB_URL =
 // 	"mongodb+srv://fallenarh:XszYIY0foELGoH74@belaela.ovpjnkw.mongodb.net/Belaela";
-const PORT = process.env.PORT;
-const DB_URL = process.env.DB_URL;
+// const PORT = process.env.PORT;
+// const DB_URL = process.env.DB_URL;
 const app = expres();
 
 //нужно чтобы экспресс мог понимать json
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 
 async function startApp() {
 	try {
-		await mongoose.connect(DB_URL);
+		// await mongoose.connect(DB_URL);
 		app.listen(PORT, () => {
 			console.log("server kurwa started");
 		});
