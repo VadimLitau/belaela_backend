@@ -5,7 +5,7 @@ import fileUpload from "express-fileupload";
 import routes from "./routes";
 
 const PORT = 5000;
-const DB_URL = "mongodb://localhost:27017/Belaela";
+// const DB_URL = "mongodb://localhost:27017/Belaela";
 
 const app = expres();
 
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 async function startApp() {
 	try {
-		await mongoose.connect(DB_URL);
+		// await mongoose.connect(DB_URL);
 		app.listen(PORT, () => {
 			console.log("server kurwa started");
 		});
