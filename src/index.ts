@@ -18,7 +18,7 @@ const app = expres();
 // нужно чтобы экспресс мог понимать json
 app.use(cors());
 app.use(expres.json());
-app.use("/static", expres.static(path.join(__dirname, "../static")));
+app.use(expres.static(path.join(__dirname, "../static")));
 app.use(fileUpload());
 app.use("/api", routes);
 
