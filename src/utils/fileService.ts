@@ -12,7 +12,7 @@ class FilesService {
 			const extension = path.extname(file.name);
 			const fileName = `${dir}_${subDir}_${index}` + `${extension}`;
 			const filePath = path.resolve(
-				`static/images/products/${dir}/${subDir}/`,
+				`./static/images/products/${dir}/${subDir}/`,
 				fileName
 			);
 			file.mv(filePath);
