@@ -14,12 +14,15 @@ const DB_URL =
 	"mongodb+srv://fallenarh:XszYIY0foELGoH74@belaela.ovpjnkw.mongodb.net/Belaela";
 // const PORT = process.env.PORT;
 // const DB_URL = process.env.DB_URL;
+
 const app = expres();
 // нужно чтобы экспресс мог понимать json
 app.use(cors());
 app.use(expres.json());
 app.use(expres.static(path.join(__dirname, "../static")));
+
 app.use(fileUpload());
+
 app.use("/api", routes);
 
 app.get("/", (req, res) => {
