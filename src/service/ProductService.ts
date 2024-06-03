@@ -2,10 +2,7 @@ import Product from "../models/Product";
 import filesService from "../utils/fileService";
 
 class ProductService {
-	async create(
-		product: { dir: any; subDir: any },
-		picture: { [x: string]: Express.Multer.File[]; photo?: any; photoMin?: any }
-	) {
+	async create(product: { dir: string; subDir: string }, picture: any) {
 		const fileName = filesService.saveFile(
 			picture.photo,
 			product.dir,

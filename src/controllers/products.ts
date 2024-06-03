@@ -1,12 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import Product from "../models/Product";
 import ProductService from "../service/ProductService";
-interface CustomRequest extends Request {
-	file?: Express.Multer.File;
-	files?: {
-		[fieldname: string]: Express.Multer.File[];
-	};
-}
+
 class ProductsController {
 	async getProducts(req: Request, res: Response, next: NextFunction) {
 		Product.find({})
@@ -14,7 +9,7 @@ class ProductsController {
 			.catch(next);
 	}
 
-	async createProduct(req: CustomRequest, res: Response, next: NextFunction) {
+	async createProduct(req: any, res: Response, next: NextFunction) {
 		try {
 			const post = await ProductService.create(req.body, req.files);
 			res.json(post);
