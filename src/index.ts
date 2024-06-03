@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 async function startApp() {
 	try {
-		// await mongoose.connect(DB_URL);
+		await mongoose.connect(DB_URL);
 		app.listen(PORT, () => {
 			console.log("server kurwa started");
 		});

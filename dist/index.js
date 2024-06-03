@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const mongoose_1 = __importDefault(require("mongoose"));
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 require("dotenv/config");
@@ -40,7 +41,7 @@ app.get("/", (req, res) => {
 function startApp() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            // await mongoose.connect(DB_URL);
+            yield mongoose_1.default.connect(DB_URL);
             app.listen(PORT, () => {
                 console.log("server kurwa started");
             });
