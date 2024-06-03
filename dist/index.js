@@ -19,6 +19,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 require("dotenv/config");
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
 const routes_1 = __importDefault(require("./routes"));
+const path_1 = __importDefault(require("path"));
 dotenv_1.default.config();
 const PORT = 9000;
 // const DB_URL = "mongodb://localhost:27017/Belaela";
@@ -29,7 +30,7 @@ const app = (0, express_1.default)();
 // нужно чтобы экспресс мог понимать json
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
-app.use(express_1.default.static("static"));
+app.use("/static", express_1.default.static(path_1.default.join(__dirname, "../static")));
 app.use((0, express_fileupload_1.default)());
 app.use("/api", routes_1.default);
 app.get("/", (req, res) => {

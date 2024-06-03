@@ -36,10 +36,5 @@
 		"globals": "^15.3.0",
 		"typescript": "^4.4.4",
 		"typescript-eslint": "^7.11.0"
-	},
-	"pre-commit": [
-		"ts.check",
-		"build",
-		"add-build"
-	]
+	}
 }

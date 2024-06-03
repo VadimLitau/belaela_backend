@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import "dotenv/config";
 import fileUpload from "express-fileupload";
 import routes from "./routes";
+import path from "path";
 
 dotenv.config();
 const PORT = 9000;
@@ -17,7 +18,7 @@ const app = expres();
 // нужно чтобы экспресс мог понимать json
 app.use(cors());
 app.use(expres.json());
-app.use(expres.static("static"));
+app.use("/static", expres.static(path.join(__dirname, "../static")));
 app.use(fileUpload());
 app.use("/api", routes);
 
