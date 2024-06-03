@@ -1,8 +1,13 @@
-import * as uuid from "uuid";
+// import * as uuid from "uuid";
 import * as path from "path";
 
 class FilesService {
-	saveFile(file, dir, subDir, index) {
+	saveFile(
+		file: { name: string; mv: (arg0: string) => void },
+		dir: any,
+		subDir: any,
+		index: string
+	) {
 		try {
 			const extension = path.extname(file.name);
 			const fileName = `${dir}_${subDir}_${index}` + `${extension}`;
