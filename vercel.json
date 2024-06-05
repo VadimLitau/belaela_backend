@@ -13,7 +13,7 @@
 		},
 		{
 			"src": "/(.*)",
-			"dest": "dist/index.js",
+			"dest": "/",
 			"methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 		}
 	]
