@@ -16,8 +16,14 @@ const DB_URL =
 // const DB_URL = process.env.DB_URL;
 
 const app = expres();
+const corsConfig = {
+	origin: "*",
+	credentials: true,
+	methods: ["GET", "POST", "PUT", "DELETE"],
+};
 // нужно чтобы экспресс мог понимать json
-app.use(cors());
+app.options("", cors(corsConfig));
+app.use(cors(corsConfig));
 app.use(expres.json());
 app.use(expres.static(path.join(__dirname, "../static")));
 
